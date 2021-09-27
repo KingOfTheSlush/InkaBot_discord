@@ -6,7 +6,6 @@ const yts = require("yt-search");
 const client = new Discord.Client();
 
 const queue = new Map();
-
 client.once("ready", () => {
   console.log("Ready");
 });
@@ -57,17 +56,17 @@ async function execute(message, serverQueue) {
 let song;
 if (ytdl.validateURL(args[1])) {
     const songInfo = await ytdl.getInfo(args[1]);
+    console.log(songInfo);
     song = {
-    title: songInfo.title,
-    url: songInfo.video_url
+    title: songInfo.videoDetails.title,
+    url: songInfo.videoDetails.video_url
     };
-}
-else {
+} else {
     const {videos} = await yts(args.slice(1).join(" "));
     if (!videos.length) return message.channel.send("No songs were found!");
     song = {
-    title: videos[0].title,
-    url: videos[0].url
+        title: videos[0].title,
+        url: videos[0].url
     };
 }
 
