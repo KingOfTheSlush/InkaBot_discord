@@ -1,7 +1,7 @@
 Make sure the token is matching in the config.json file
 Install nodeJS
 
-~REQUIRED DEPENDENCIES~
+**REQUIRED DEPENDENCIES**
 
 npm install ffmpeg-static --save
 npm install ffmpeg fluent-ffmpeg --save
@@ -10,7 +10,7 @@ npm install @discordjs/opus --save
 npm install ytdl-core --save
 npm install yt-search --save
 
-~USAGE~
+**USAGE**
 
 !play <youtube search or link>
 to play music in the voice channel you are in
